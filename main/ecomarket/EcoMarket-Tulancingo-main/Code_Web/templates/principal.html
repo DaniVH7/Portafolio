@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMarket Tulancingo</title>
+    <link rel="stylesheet" href="../CSS/principal.css">
+    <link rel="icon" href="../assets/EcoMarket1.png" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+</head>
+<body>
+    <header>
+        <span class="menu-btn" onclick="toggleMenu()">&#9776;</span>
+        <img src="../assets/EcoMarket1.png" alt="EcoMarket Tulancingo Logo">
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <img src="../assets/icon_pe.png" alt="EcoMarket Tulancingo Logo" style=" height: 60px;">
+        <div class="auth-buttons">
+            <button onclick="window.location.href='../templates/perfil.html'" class="register">Perfil</button>
+            <!-- <button  class="login" onclick="window.location.href='../templates/inicio_sesion.html'">Inicia Sesión</button> -->
+        </div>
+    </header>
+    <nav id="sidebar">
+        <span class="close-btn" onclick="toggleMenu()"></span>
+        <ul>
+            <li><a href="../templates/principal.html">Inicio</a></li>
+            <li><a href="../templates/venta.html">Mis Productos</a></li>
+            <li><a href="../templates/favoritos.html">Favoritos</a></li>
+            <li><a href="../templates/publicar.html">Vender</a></li>
+            <li><a href="#">Mis Compras</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="content">
+            <div class="welcome-card">
+                <h1>Bienvenido a EcoMarket Tulancingo</h1>
+                <button onclick="window.location.href='../templates/venta.html'">Empezar a vender</button>
+            </div>
+            <div class="products" id="products">
+                <!-- <div class="product">
+                    <img src="product.png" alt="Producto">
+                    <p>Texto de prueba<br>Texto de prueba<br>Texto de prueba<br>Texto de prueba</p>
+                    <button onclick="window.location.href='../templates/ver-producto.html'">Comprar</button>
+                </div> -->
+                
+                
+            </div>
+        </div>
+    </main>
+    <!-- <img src="../assets/animacion_1.gif" alt="Background GIF" class="background-gif"> -->
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.style.left === '0px') {
+                sidebar.style.left = '-300%';
+            } else {
+                sidebar.style.left = '0px';
+            }
+        }
+
+        $(document).ready(function(){
+            $.ajax({
+                url: "http://localhost:8080/producto",
+                
+                type: "GET",
+                dataType: "json",
+                success: function(data, textStatus, jqXHR){
+                    let productos = data;
+                    productos.forEach(element => {
+                        let card = $(`<div class="product">
+                    <img src="${element.imagen}" alt="Producto"><br>
+                    <br>
+                    <label for="product-description">Producto:</label>
+                    <input type="text" id="product-weight" name="product-weight" value="${element.nombre}" disabled />
+                    <br>
+                    <br>
+                    
+                    <label for="product-description">Precio:</label>
+                    <input type="text" id="product-weight" name="product-weight" value="$${element.precio}" disabled />
+                    <br>
+                    <br>
+                    <label for="product-description">Cantidad:</label>
+                    <input type="text" id="product-weight" name="product-weight" value="${element.cantidad}kl" disabled />
+                    <br>
+                    <br>
+                    <button onclick="window.location.href='../templates/ver-producto.html?id=${element.idProducto}'">Comprar</button>
+                </div>`);
+                    $("#products").append(card);
+                    });
+                },
+                error: function(jqXHR, textStatus, error){
+                    alert("error")
+                }
+
+
+            })
+        }
+    )
+    </script>
+</body>
+</html>

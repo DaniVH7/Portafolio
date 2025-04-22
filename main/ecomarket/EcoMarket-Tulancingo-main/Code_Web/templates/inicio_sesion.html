@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/inicio_sesion.css">
+    <link rel="icon" href="../assets/EcoMarket1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="jquery-3.7.1.min.js"></script>
+
+    <title>EcoMarket Tulancingo</title>
+</head>
+<body>
+<!-- Header que contiene el logo de EcoMarket -->
+<div class="header">
+    <a href="../index.html">
+        <img src="../assets/EcoMarket1.png" alt="logo" class="logo">
+    </a>
+    <h1 class="welcome-text">Bienvenido a EcoMarket Tulancingo</h1>
+</div>
+
+<!-- Formulario de inicio de sesión envuelto en una tarjeta -->
+<div class="card">
+    <div class="login">
+        <div class="txt_inicio_sesion">Inicio de Sesión</div>
+        <div class="profile-icon">
+            <img src="../assets/icon_pe.png" alt="icono de perfil">
+        </div>
+        <form action="" method="POST">
+            <p class="txt_inicio_sesion">Correo:</p>
+            <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico" required>
+            <p class="txt_inicio_sesion">Contraseña:</p>
+            <div class="password-container">
+                <input type="password" id="pass" name="pass" placeholder="Ingrese su contraseña" required>
+                <i class="fa fa-eye-slash" id="togglePassword"></i>
+
+            </div>
+           
+            
+            <button type="submit" id="login">Iniciar sesión</button>
+            
+        </form>
+        <div class="forgot-password">
+            <a href="recuperacion_contraseña.html">¿Olvidaste tu contraseña?</a>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="../public/login.js"></script>
+<script>
+   document.getElementById('togglePassword').addEventListener('click', function() {
+    var passField = document.getElementById('pass');
+    var icon = document.getElementById('togglePassword');
+    
+    if (passField.type === 'password') {
+        passField.type = 'text';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+    } else {
+        passField.type = 'password';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+    }
+});
+
+</script>
+</body>
+<img src="../assets/reciclaje_-_giphy.gif" alt="Background GIF" class="background-gif">
+</html>

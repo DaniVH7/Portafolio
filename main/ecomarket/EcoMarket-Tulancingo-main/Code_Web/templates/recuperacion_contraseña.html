@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/recuperacion_contraseña.css" />
+    <link rel="icon" href="../assets/EcoMarket1.png" type="image/x-icon" />
+    <title>EcoMarket Tulancingo</title>
+  </head>
+  <body>
+    <!-- Header que contiene el logo de EcoMarket -->
+    <div class="header">
+      <a href="../templates/inicio_sesion.html">
+        <img src="../assets/EcoMarket1.png" alt="logo" class="logo" />
+      </a>
+      <h1 class="welcome-text">Bienvenido a EcoMarket Tulancingo</h1>
+    </div>
+
+    <div class="card">
+        <div class="recuperacion">
+            <div class="profile-icon">
+              <img src="../assets/icon_pe.png" alt="icono de perfil" />
+            </div>
+            <form id="resetForm" action="" method="POST">
+              <p class="txt_inicio_sesion">
+                Ingrese su correo para reestablecer su contraseña:
+              </p>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Ingrese su correo electrónico"
+                required
+              />
+              <button type="submit" id="submitButton">Enviar</button>
+            </form>
+          </div>
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2>¡Verifique su correo electrónico!</h2>
+              </div>
+              <div class="modal-body">
+                <p>
+                  Se ha enviado un correo electrónico con instrucciones para
+                  restablecer su contraseña.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button id="closeModalBtn" class="btn">Cerrar</button>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <!-- Formulario de recuperación-->
+    
+
+    <!-- Modal -->
+    
+
+    <!-- JavaScript para mostrar el modal después de enviar el formulario -->
+    <script>
+      // Obtener elementos del DOM
+      var modal = document.getElementById("myModal");
+      var form = document.getElementById("resetForm");
+      var submitButton = document.getElementById("submitButton");
+      var closeModalBtn = document.getElementById("closeModalBtn");
+
+      // Cuando se envía el formulario
+      form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Evitar envío del formulario (para este ejemplo)
+
+        // Mostrar el modal
+        modal.style.display = "block";
+      });
+
+      // Cuando se hace clic en el botón de cerrar
+      closeModalBtn.addEventListener("click", function () {
+        modal.style.display = "none";
+        window.location.href = "cambio_contraseña.html";
+      });
+
+      // Cuando se hace clic en cualquier parte fuera del modal, cerrarlo también
+      window.addEventListener("click", function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+    </script>
+
+    <script type="module" src="../public/reset_pass.js"></script>
+  </body>
+  <img src="../assets/reciclaje_-_giphy.gif" alt="Background GIF" class="background-gif">
+</html>

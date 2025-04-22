@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Producto - EcoMarket Tulancingo</title>
+    <link rel="stylesheet" href="../CSS/publicar.css">
+    <link rel="icon" href="../assets/EcoMarket1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="../assets/EcoMarket1.png" alt="EcoMarket Tulancingo Logo">
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar productos...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="menu-profile">
+            <nav>
+                <ul>
+                    <li><a href="../templates/principal.html">Inicio</a></li>
+                    <li><a href="../templates/venta.html">Mis Productos</a></li>
+                </ul>
+            </nav>
+            <div class="profile-icon">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="upload-icon">
+            <i class="fas fa-cloud-upload-alt fa-10x"></i>
+        </div>
+        <form id="product-form">
+            <div class="form-step active">
+                <h2>Información del Producto</h2>
+                <label for="product-name">Nombre del Producto:</label>
+                <input type="text" id="product-name" name="product-name">
+                
+                <label for="product-description">Descripción:</label>
+                <textarea id="product-description" name="product-description"></textarea>
+                
+                <label for="product-weight">Peso:</label>
+                <input type="text" id="product-weight" name="product-weight">
+                
+                <button type="button" class="next-btn">Siguiente</button>
+            </div>
+            <div class="form-step">
+                <h2>Detalles del Producto</h2>
+                <label for="product-condition">Estado del Producto:</label>
+                <input type="text" id="product-condition" name="product-condition">
+                
+                <label for="product-classification">Clasificación:</label>
+                <select id="product-classification" name="product-classification">
+                    <option value="categoria1">Categoría 1</option>
+                    <option value="categoria2">Categoría 2</option>
+                    <option value="categoria3">Categoría 3</option>
+                </select>
+                
+                <label for="product-price">Precio:</label>
+                <input type="text" id="product-price" name="product-price">
+                
+                <button type="button" class="prev-btn">Regresar</button>
+                <button type="button" class="next-btn">Siguiente</button>
+            </div>
+            <div class="form-step">
+                <h2>Detalles de Contacto</h2>
+                <label for="store-name">Nombre de la Tienda (Opcional):</label>
+                <input type="text" id="store-name" name="store-name">
+                
+                <label for="address">Dirección:</label>
+                <input type="text" id="address" name="address">
+                
+                <label for="contact-phone">Teléfono de Contacto:</label>
+                <input type="text" id="contact-phone" name="contact-phone">
+                
+                <label for="deposit-reference">Referencia de Depósito:</label>
+                <input type="text" id="deposit-reference" name="deposit-reference">
+                
+                <button type="button" class="prev-btn">Regresar</button>
+                <button type="submit" class="submit-btn">Subir Producto</button>
+            </div>
+        </form>
+    </main>
+    <script src="../JS/form-steps.js"></script>
+</body>
+</html>

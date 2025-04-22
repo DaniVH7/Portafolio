@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ver Producto - EcoMarket Tulancingo</title>
+    <link rel="stylesheet" href="../CSS/ver.css" />
+    <link rel="icon" href="../assets/EcoMarket1.png" type="image/x-icon" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <img src="../assets/EcoMarket1.png" alt="EcoMarket Tulancingo Logo" />
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar productos..." />
+        <button><i class="fas fa-search"></i></button>
+      </div>
+      <div class="menu-profile">
+        <nav>
+          <ul>
+            <li><a href="../templates/principal.html">Inicio</a></li>
+            <li><a href="../templates/venta.html">Mis Productos</a></li>
+          </ul>
+        </nav>
+        <div class="profile-icon">
+          <i class="fas fa-user"></i>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="" alt="Producto" id="img-pro"/>
+          <i class="fas fa-star favorite-icon"></i>
+        </div>
+        <div class="product-details">
+          <h2 id="nom">Nombre del Producto</h2>
+          <label for="product-description">Descripción:</label>
+          <textarea id="product-description" name="product-description" rows="4" cols="50" disabled></textarea>
+
+          <label for="product-weight">Peso:</label>
+          <input type="text" id="product-weight" name="product-weight"  value=""disabled />
+
+          <!-- <label for="product-condition">Estado:</label>
+          <input  type="text" id="product-condition" name="product-condition" value="Nuevo" disabled/> -->
+
+          <label for="product-classification">Clasificación:</label>
+          <input type="text" id="product-classification" name="product-classification" value="" disabled />
+
+          <label for="product-price">Precio:</label>
+          <input type="text" id="product-price" name="product-price" value="" disabled/>
+
+          <button class="buy-btn">Comprar</button>
+        </div>
+      </div>
+      <div class="buyer-info hidden">
+        <h2>Información del Comprador</h2>
+        <form id="buyer-form">
+          <label for="buyer-name">Nombre:</label>
+          <input type="text" id="buyer-name" name="buyer-name" disabled/>
+
+          <label for="buyer-address">Dirección:</label>
+          <input type="text" id="buyer-address" name="buyer-address" disabled />
+
+          <label for="buyer-phone">Teléfono:</label>
+          <input type="text" id="buyer-phone" name="buyer-phone" disabled />
+          
+          <label for="buyer-correo">Correo:</label>
+          <input type="text" id="buyer-correo" name="buyer-correo" disabled />
+
+          <label for="payment-reference">Referencia de Pago:</label>
+          <input
+            type="text"
+            id="payment-reference"
+            name="payment-reference"
+            required
+          />
+
+          <button type="submit" class="buy-btn2">Confirmar Compra</button>
+        </form>
+      </div>
+    </main>
+    <img
+      src="../assets/reciclaje_-_giphy.gif"
+      alt="Background GIF"
+      class="background-gif"
+    />
+    <script src="../JS/ver-producto.js"></script>
+    <script>
+      const queryString = window.location.search;
+
+      // Crear un objeto URLSearchParams a partir de la cadena de consulta
+      const urlParams = new URLSearchParams(queryString);
+
+      // Obtener los valores de los parámetros específicos
+      const idp = urlParams.get("id");
+      $(document).ready(function(){
+            $.ajax({
+                url: "http://localhost:8080/producto/"+idp,
+                
+                type: "GET",
+                dataType: "json",
+                success: function(data, textStatus, jqXHR){
+                    let producto = data;
+                    
+                    $("#img-pro").attr("src",producto.imagen)
+                    $("#nom").text( producto.nombre)
+                    $("#product-description").text(producto.descripción)
+                    $("#product-weight").attr( "value", producto.cantidad)
+                    $("#product-price").attr("value", producto.precio)
+                    $("#product-classification").attr ("value", producto.nombreCategoria)
+                    $("#buyer-name").attr ("value", producto.vendedor.nombre)
+                    $("#buyer-correo").attr ("value", producto.vendedor.correoElectronico)
+                    $("#buyer-address").attr ("value", producto.vendedor.direccion)
+                    $("#buyer-phone").attr ("value", producto.vendedor.telefono)
+                    
+                },
+                error: function(jqXHR, textStatus, error){
+                    alert("error")
+                }
+
+
+            })
+        }
+    )
+    </script>
+  </body>
+</html>

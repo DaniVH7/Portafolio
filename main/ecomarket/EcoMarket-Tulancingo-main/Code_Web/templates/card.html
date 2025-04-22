@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMarket Tulancingo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f4eb;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Evitar el desplazamiento horizontal */
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header img {
+            height: 50px;
+        }
+        header .search-bar {
+            flex-grow: 1;
+            margin: 0 20px;
+        }
+        header .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        header .auth-buttons button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+        header .auth-buttons .register {
+            background-color: #28a745;
+        }
+        header .auth-buttons .login {
+            background-color: #007bff;
+        }
+        nav {
+            width: 100%;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+            padding: 20px;
+            position: fixed;
+            top: 60px;
+            left: -100%;
+            height: calc(100% - 60px);
+            transition: left 0.3s;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            padding: 10px 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        nav .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .menu-btn {
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            margin-top: 60px; /* Ajuste para el espacio del header */
+        }
+        .welcome-card {
+            background-color: #DED1A9;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .welcome-card h1 {
+            margin: 0;
+        }
+        .welcome-card button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .products {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .product {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: border 0.3s;
+        }
+        .product:hover {
+            border: 2px solid #28a745; /* Contorno verde */
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        .product button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <span class="menu-btn" onclick="toggleMenu()">&#9776;</span>
+        <img src="logo.png" alt="EcoMarket Tulancingo Logo">
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+        </div>
+        <div class="auth-buttons">
+            <button class="register">Regístrate</button>
+            <button class="login">Inicia Sesión</button>
+        </div>
+    </header>
+    <nav id="sidebar">
+        <span class="close-btn" onclick="toggleMenu()">&times;</span>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Categorías</a></li>
+            <li><a href="#">Ofertas</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="content">
+            <div class="welcome-card">
+                <h1>Bienvenido a EcoMarket Tulancingo</h1>
+                <button>Empezar a vender</button>
+            </div>
+            <div class="products">
+                <div class="product">
+                    <img src="product.png" alt="Producto">
+                    <p>Texto de prueba<br>Texto de prueba<br>Texto de prueba<br>Texto de prueba</p>
+                    <button>Comprar</button>
+                </div>
+                <div class="product">
+                    <img src="product.png" alt="Producto">
+                    <p>Texto de prueba<br>Texto de prueba<br>Texto de prueba<br>Texto de prueba</p>
+                    <button>Comprar</button>
+                </div>
+                <div class="product">
+                    <img src="product.png" alt="Producto">
+                    <p>Texto de prueba<br>Texto de prueba<br>Texto de prueba<br>Texto de prueba</p>
+                    <button>Comprar</button>
+                </div>
+                <div class="product">
+                    <img src="product.png" alt="Producto">
+                    <p>Texto de prueba<br>Texto de prueba<br>Texto de prueba<br>Texto de prueba</p>
+                    <button>Comprar</button>
+                </div>
+                <div class="product">
+                    <img src="product.png" alt="Producto">
+                    <p>Texto de prueba<br>Texto de prueba<br>Texto de prueba<br>Texto de prueba</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.style.left === '0px') {
+                sidebar.style.left = '-100%';
+            } else {
+                sidebar.style.left = '0px';
+            }
+        }
+    </script>
+</body>
+</html>

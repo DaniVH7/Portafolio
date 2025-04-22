@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+ <meta charset="utf-8">
+    <title>Cuartos Express
+    </title>
+    <link rel="stylesheet" type="text/css" href="../sources/css/administrador/cuartosnuevos.css">
+    <link rel="icon" href="../sources/images/white_logo_transparent_background.png" type="image/png">
+    <body>
+    <div class="container"><div class="formulario">
+        <div class="form"><form action="../php/cuartonuevo.php" method="post" enctype="multipart/form-data">
+            <section id="../php/cuartonuevos.php" class="contenedor">
+                    <table>
+                        <tr>
+                            <td class="izq">
+                                <label class="lbl" for="txtPrecio">Precio:</label>
+                            </td>
+                            <td class="der">
+                                <input type="number" min="100" max="50000" class="txtPrecio" id="txtPrecio" name=
+                                "txtPrecio" placeholder="$$$$">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="izq">
+                                <label class="lbl" for="txtAmueblado">Amueblado:</label>
+                            </td>
+                            <td class="der">
+                                <input type="radio" name="txtAmueblado" value="SI">Si
+                                <input type="radio" name="txtAmueblado" value="NO">No
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="izq">
+                                <label class="lbl" for="txtAgua">Agua:</label>
+                            </td>
+                            <td class="der">
+                                <input type="radio" name="txtAgua" value="SI">Si
+                                <input type="radio" name="txtAgua" value="NO">No
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="izq">
+                                <label class="lbl" for="txtLuz">Luz:</label>
+                            </td>
+                            <td class="der">
+                                <input type="radio" name="txtLuz" value="SI">Si
+                                <input type="radio" name="txtLuz" value="NO">No
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="izq">
+                                <label class="lbl" for="txtInternet">Internet:</label>
+                            </td>
+                            <td class="der">
+                                <input type="radio" name="txtInternet" value="SI">Si
+                                <input type="radio" name="txtInternet" value="NO">No
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="izq">
+                                <label class="lbl" for="txtVigilancia">Vigilancia:</label>
+                            </td>
+                            <td class="der">
+                                <input type="radio" name="txtVigilancia" value="SI">Si
+                                <input type="radio" name="txtVigilancia" value="NO">No
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="izq">
+                                <label class="lbl" for="txtCocina">Cocina Compartida:</label>
+                            </td>
+                            <td class="der">
+                                <input type="radio" name="txtCocina" value="SI">Si
+                                <input type="radio" name="txtCocina" value="NO">No
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="izq">
+                                <label class="lbl" for="txtBaño">Baño Compartido:</label>
+                            </td>
+                            <td class="der">
+                                <input type="radio" name="txtBaño" value="SI">Si
+                                <input type="radio" name="txtBaño" value="NO">No
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="izq">
+                                <label class="lbl" for="txtCompartido">Cuarto Compartido:</label>
+                            </td>
+                            <td class="der">
+                                <input type="radio" name="txtCompartido" value="SI">Si
+                                <input type="radio" name="txtCompartido" value="NO">No
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="izq">
+                                <label class="lbl" for="txtRenta">Tiempo de Renta:</label>
+                            </td>
+                            <td class="der">
+                                <input type="radio" name="txtRenta" value="SI">Si
+                                <input type="radio" name="txtRenta" value="NO">No
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="izq">
+                                <label class="lbl" for="txtCondominio">Tipo de Condominio:</label>
+                            </td>
+                            <td class="der">
+                                <input type="radio" name="txtCondominio" value="Casa">Casa
+                                <input type="radio" name="txtCondominio" value="Edificio">Edificio
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="izq">
+                                <label class="lbl" for="txtCalle">Calle:</label>
+                            </td>
+                            <td class="der">
+                                <input type="text" class="txt" id="txtCalle" name=
+                                "txtCalle" placeholder="Calle donde se ubica">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="izq">
+                                <label class="lbl" for="txtEstado">Estado:</label>
+                            </td>
+                            <td class="der">
+                                <input type="text" class="txt" id="txtEstado" name=
+                                "txtEstado" placeholder="Estado donde se Encuentra">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="izq">
+                                <label class="lbl" for="txtMunicipio">Municipio:</label>
+                            </td>
+                            <td class="der">
+                                <input type="text" class="txt" id="txtMunicipio" name=
+                                "txtMunicipio" placeholder="Municipio donde se ubica">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="izq">
+                                <label class="lbl" for="txtDisponible">Disponibilidad:</label>
+                            </td>
+                            <td class="der">
+                                <input type="radio" name="txtDisponible" value="Disponible">Disponibles
+                                <input type="radio" name="txtDisponible" value="Ocupado">Ocupado                               
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="izq">
+                                <label class="lbl" for="fileFoto"> Imagen: </label>
+                            </td>
+                            <td class="der">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="500000" />
+                                <input type="file" class="txt" id="fileFoto" name="fileFoto"
+                                placeholder="Imagen del Cuarto">
+                            </td>
+                        </tr>
+                        <tr></tr>
+                        <tr>
+                            <td class="izq">
+                            </td>
+                            <td class="der">
+                                <input type="submit" class="btn" id="enviar"
+                                value="GUARDAR">&nbsp;
+                                <input type="reset" class="btn" id="borrar"
+                                value="limpiar">
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="anterior"><a href="admin.html" style="color: #BBE1FA;">Anterior</div>
+
+            </section>
+        </form></div>
+    </div>
+        <div class="derecha">
+            <div class="centro"><h1>Ingresa un Nuevo cuarto</h1></div>
+        </div>
+    </div>
+</body>

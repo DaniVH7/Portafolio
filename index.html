@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Portafolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Times New Roman', sans-serif; }
+    @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- Header -->
+  <header class="bg-blue-800 text-white py-16 md:py-24 min-h-screen flex items-center">
+    <div class="container mx-auto text-center px-6">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-2" data-aos="fade-up">Cristian Daniel Valeriano Hernandez</h1>
+        <p class="text-lg md:text-xl mb-4" data-aos="fade-up" data-aos-delay="200">DaniVh7</p>
+        <p class="text-xl mb-4" data-aos="fade-up" data-aos-delay="400">Desarrollador Web | Móvil | Freelancer</p>
+        <div class="flex justify-center gap-6">        
+        <a href="#contacto" class="border-2 border-white text-white py-2 px-6 rounded-full hover:bg-white hover:text-blue-600 transition duration-300">Contacto</a>
+      </div>
+    </div>
+  </header>
+  
+
+  <!-- About Me -->
+  <section id="aboutMe" class="py-20 bg-indigo-100">
+    <div class="container mx-auto text-center px-6">
+      <h2 class="text-3xl font-bold mb-4">Sobre mí</h2>
+      <div class="bg-white shadow-md rounded-xl p-6 max-w-3xl mx-auto mb-8 border border-gray-200">
+        <p class="text-lg text-gray-800">
+          Soy un apasionado del desarrollo de software, siempre buscando aprender y mejorar mis habilidades. Me encanta trabajar en proyectos desafiantes y colaborar con otros para crear soluciones innovadoras.
+        </p>
+      </div>      
+      <a href="#proyectos" class="bg-blue-600 text-white py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 mb-4 inline-block">Ver Proyectos</a>
+  
+      <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-center">
+        <div class="flex flex-col items-center justify-center bg-gray-800 text-white py-4 px-6 rounded-xl hover:bg-gray-700 transition duration-300 transform hover:scale-105">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" class="h-12 w-12 mb-2">
+          <span>Python</span>
+        </div>
+  
+        <!-- JavaScript -->
+        <div class="flex flex-col items-center justify-center bg-yellow-400 text-gray-800 py-4 px-6 rounded-xl hover:bg-yellow-500 transition duration-300 transform hover:scale-105">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" class="h-12 w-12 mb-2">
+          <span>JavaScript</span>
+        </div>
+  
+        <!-- Flutter -->
+        <div class="flex flex-col items-center justify-center bg-blue-600 text-white py-4 px-6 rounded-xl hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+          <img src="img/icons8-flutter-logo.svg" alt="Flutter" class="h-12 w-12 mb-2">
+          <span>Flutter</span>
+        </div>
+  
+        <!-- PHP -->
+        <div class="flex flex-col items-center justify-center bg-gray-800 text-white py-4 px-6 rounded-xl hover:bg-gray-700 transition duration-300 transform hover:scale-105">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="PHP" class="h-12 w-12 mb-2">
+          <span>PHP</span>
+        </div>
+  
+        <!-- Laravel -->
+        <div class="flex flex-col items-center justify-center bg-gray-800 text-white py-4 px-6 rounded-xl hover:bg-gray-700 transition duration-300 transform hover:scale-105">
+            <img src="img/Laravel-Logo.wine.svg" alt="Laravel" class="h-12 w-12 mb-2">
+            <span>Laravel</span>
+          </div>
+  
+        <!-- React -->
+        <div class="flex flex-col items-center justify-center bg-blue-600 text-white py-4 px-6 rounded-xl hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" class="h-12 w-12 mb-2">
+          <span>React</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Proyectos -->
+  <section id="proyectos" class="py-20 bg-indigo-100">
+    <div class="container mx-auto text-center px-6">
+      <h2 class="text-3xl font-bold mb-12">Mis Proyectos</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Proyecto 1 -->
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+          <h3 class="text-xl font-semibold mb-3">Quickroom</h3>
+          <img src="img/logo_size.jpg" alt="Logo de Quickroom" class="w-full h-50 object-cover rounded-md mb-4">
+          <p class="text-gray-700">Una app web para estudiantes en busca de un cuarto para rentar cerca de su universidad.</p>
+          <a href="viejo/quickroom/QuickRoom-main/index.html" target="_blank" class="text-blue-600 font-semibold hover:underline mt-4 block">Ver Demo</a>
+        </div>
+        <!-- Proyecto 2 -->
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+          <h3 class="text-xl font-semibold mb-3">Ecomarket</h3>
+          <img src="img/EcoMarket1.png" alt="Logo de Ecomarket" class="w-full h-45 object-cover rounded-md mb-4">
+          <p class="text-gray-700">App web y móvil para la compra y venta de productos orgánicos e inorgánicos.</p>
+          <a href="viejo/ecomarket/EcoMarket-Tulancingo-main/Code_Web/templates/principal.html" target="_blank" class="text-blue-600 font-semibold hover:underline mt-4 block">Ver Demo</a>
+        </div>
+        <!-- Proyecto 3 -->
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+          <h3 class="text-xl font-semibold mb-3">Labkey</h3>
+          <img src="img/labkey_logo.png" alt="Logo de Labkey" class="w-full h-50 object-cover rounded-md mb-4">
+          <p class="text-gray-700">App móvil para reservar un espacio dentro de un laboratorio institucional.</p>
+          <a href="../main/viejo/labkey/index.html" target="_blank" class="text-blue-600 font-semibold hover:underline mt-4 block">Ver Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <footer id="contacto" class="bg-blue-800 text-white py-16">
+    <div class="container mx-auto text-center px-6">
+      <h2 class="text-3xl font-bold mb-4">Contacto</h2>
+      <p class="text-lg mb-4">¿Quieres trabajar conmigo? ¡Estoy aquí para ayudarte!</p>
+      <p class="text-lg mb-8">Puedes contactarme por correo o en mis redes sociales:</p>
+      <p class="font-semibold text-xl mb-6">danivh999@gmail.com</p>
+      <div class="flex justify-center gap-6 text-xl">
+        <a href="https://www.linkedin.com/in/cristian-daniel-valeriano-hernandez-45787935b/" target="_blank" class="text-white hover:text-blue-200">LinkedIn</a>
+        <a href="https://github.com/DaniVH7" target="_blank" class="text-white hover:text-blue-200">GitHub</a>
+        <a href="#" target="_blank" class="text-white hover:text-blue-200">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>
